@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Future Together 💑</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff69b4, #87ceeb);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 600px;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .prediction {
+            font-size: 1.2em;
+            margin: 20px 0;
+            min-height: 100px;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        button {
+            background: #ff1493;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .heart {
+            animation: float 2s ease-in-out infinite;
+            font-size: 2em;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="heart">💑</span>
+        <h1>Our Future Together</h1>
+        <div class="prediction" id="prediction">
+            Click the button to see what our future holds! ✨
+        </div>
+        <button onclick="generatePrediction()">Predict Our Future! 🔮</button>
+    </div>
+
+    <script>
+        const futures = [
+            "In 2 years, we'll adopt a quirky cat that thinks it's a dog! 🐱",
+            "Next summer, we'll go on an adventure and get hilariously lost, but find the best ice cream shop ever! 🍦",
+            "In 5 years, we'll be telling our friends about how we once tried to cook together and almost burned the kitchen! 🔥",
+            "We'll start a silly tradition of wearing matching socks every Sunday! 🧦",
+            "In 3 years, we'll become famous in our neighborhood for our terrible but enthusiastic karaoke nights! 🎤",
+            "Next winter, we'll build the world's most lopsided snowman and name him Bob! ⛄",
+            "In our future home, we'll have a wall dedicated to our worst selfies! 📸",
+            "We'll start a mini garden but only manage to grow one giant tomato that we'll be ridiculously proud of! 🍅",
+            "In 4 years, we'll have an inside joke so complex, we'll need a PowerPoint presentation to explain it to others! 😂",
+            "We'll become that couple that has coordinated dance moves at every wedding we attend! 💃🕺"
+            // Add more predictions that are personal to your relationship!
+        ];
+
+        function generatePrediction() {
+            const prediction = document.getElementById('prediction');
+            const randomIndex = Math.floor(Math.random() * futures.length);
+            
+            prediction.style.opacity = 0;
+            
+            setTimeout(() => {
+                prediction.textContent = futures[randomIndex];
+                prediction.style.opacity = 1;
+            }, 200);
+        }
+    </script>
+</body>
+</html>
